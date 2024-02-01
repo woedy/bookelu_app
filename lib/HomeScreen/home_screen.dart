@@ -1,3 +1,5 @@
+import 'dart:convert';
+
 import 'package:bookelu_app/Bookings/user_bookings.dart';
 import 'package:bookelu_app/HomeScreen/bookings_screen.dart';
 import 'package:bookelu_app/Message/chat_screen.dart';
@@ -6,6 +8,7 @@ import 'package:bookelu_app/Profile/UserProfile.dart';
 import 'package:bookelu_app/constants.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
+import 'package:shared_preferences/shared_preferences.dart';
 
 class HomeScreen extends StatefulWidget {
   const HomeScreen({super.key});
@@ -18,7 +21,23 @@ class _HomeScreenState extends State<HomeScreen> {
 
   PageController _pageController = PageController(initialPage: 0);
   int currentPage = 0;
+  Map<String, dynamic> userData = {};
 
+
+  @override
+  void initState() {
+    super.initState();
+    // Retrieve data from SharedPreferences
+    getUserData();
+  }
+
+  Future<void> getUserData() async {
+    SharedPreferences prefs = await SharedPreferences.getInstance();
+    String userDataString = prefs.getString('user_data') ?? '';
+    setState(() {
+      userData = json.decode(userDataString);
+    });
+  }
 
 
   @override
@@ -45,7 +64,7 @@ class _HomeScreenState extends State<HomeScreen> {
                               crossAxisAlignment: CrossAxisAlignment.start,
                               children: [
                                 Text("Good Morning", style: TextStyle(fontSize: 15, fontWeight: FontWeight.w500),),
-                                Text("Bessie Coopers", style: TextStyle(fontSize: 20, fontWeight: FontWeight.w700, fontFamily: "Fontspring"),),
+                                Text(userData['full_name'].toString(), style: TextStyle(fontSize: 20, fontWeight: FontWeight.w700, fontFamily: "Fontspring"),),
 
                               ],
                             ),
@@ -62,7 +81,7 @@ class _HomeScreenState extends State<HomeScreen> {
                                   },
                                   child: CircleAvatar(
                                     radius: 35,
-                                    backgroundImage: AssetImage("assets/images/shop_g.png"),
+                                    backgroundImage: NetworkImage(hostNameMedia + userData['photo'].toString()),
                                   ),
                                 )
                               ],

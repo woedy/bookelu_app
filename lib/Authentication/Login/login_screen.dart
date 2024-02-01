@@ -38,7 +38,13 @@ Future<SignInModel> signInUser(String email, String password) async {
     if (result != null) {
       print(result['data']['token'].toString());
       await saveIDApiKey(result['data']['token'].toString());
-      //await saveUserData(result['userData']);
+
+
+
+      await saveUserData(result['data']);
+
+
+
 
     }
     return SignInModel.fromJson(jsonDecode(response.body));
@@ -63,6 +69,11 @@ Future<bool> saveIDApiKey(String apiKey) async {
   return prefs.commit();
 }
 
+
+Future<void> saveUserData(Map<String, dynamic> userData) async {
+  SharedPreferences prefs = await SharedPreferences.getInstance();
+  prefs.setString('user_data', json.encode(userData));
+}
 
 
 class LoginScreen extends StatefulWidget {

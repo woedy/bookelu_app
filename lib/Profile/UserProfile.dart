@@ -318,6 +318,7 @@ class _UserProfileState extends State<UserProfile> {
   Future<void> clearApiKey() async {
     SharedPreferences prefs = await SharedPreferences.getInstance();
     await prefs.remove("API_Key");
+    await prefs.remove("user_data");
   }
 
 }
