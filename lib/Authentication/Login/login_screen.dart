@@ -555,20 +555,17 @@ class _LoginScreenState extends State<LoginScreen> {
                       MaterialPageRoute(builder: (context) => LoginScreen())
                   );
 
+                  String customErrorMessage = snapshot.data!.errors![errorKey]![0];
                   showDialog(
                       barrierDismissible: true,
                       context: context,
                       builder: (BuildContext context){
-                        return ErrorDialogBox(text: 'These credentials do not match our records.',);
+                        return ErrorDialogBox(text: customErrorMessage);
                       }
                   );
 
-
-
-
                 });
               }
-
             }
 
 

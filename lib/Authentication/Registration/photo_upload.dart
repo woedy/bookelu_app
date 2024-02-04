@@ -173,7 +173,7 @@ class _UploadPhotoRegState extends State<UploadPhotoReg> {
                                 widget.data['photo'] = _image!.path;
 
                                 print("#######");
-                                print(widget.data.toString());
+                                //print(widget.data.toString());
 
 
                                 Navigator.push(context,

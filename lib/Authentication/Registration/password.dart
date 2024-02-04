@@ -15,47 +15,52 @@ import 'package:http/http.dart' as http;
 
 
 Future<SignUpModel> signUpUser(data) async {
+  final url = Uri.parse(hostName + "accounts/register-user/");
+  final request = http.MultipartRequest('POST', url);
 
-  final response = await http.post(
-    Uri.parse(hostName + "accounts/register-user/"),
-    headers: <String, String>{
-      'Content-Type': 'application/json; charset=UTF-8',
-      'Accept': 'application/json'
-    },
-    body: jsonEncode({
-      "full_name": data["full_name"],
-      "email": data["email"],
-      "photo": data["photo"],
-      "phone": data["phone"],
-      "country": data["country"],
-      "password": data["password"],
-      "password2": data["password2"],
-    }),
-  );
+  request.headers['Accept'] = 'application/json';
+  request.headers['Content-Type'] = 'multipart/form-data';
 
+  request.files.add(await http.MultipartFile.fromPath('photo', data["photo"]));
 
-  if (response.statusCode == 200) {
-    print(jsonDecode(response.body));
-    final result = json.decode(response.body);
-    if (result != null) {
+  request.fields['full_name'] = data["full_name"];
+  request.fields['email'] = data["email"];
+  request.fields['phone'] = data["phone"];
+  request.fields['country'] = data["country"];
+  request.fields['password'] = data["password"];
+  request.fields['password2'] = data["password2"];
 
-      print(result['data']['token']);
+  try {
+    final response = await request.send();
+
+    if (response.statusCode == 200 || response.statusCode == 201) {
+      final responseBody = await response.stream.bytesToString();
+      final result = json.decode(responseBody);
 
 
+      print("############");
+      print("WE ARE INNNNNNNN");
+      print(result);
+
+      return SignUpModel.fromJson(result);
+
+    } else if (response.statusCode == 422 ||
+        response.statusCode == 403 ||
+        response.statusCode == 400) {
+      final responseBody = await response.stream.bytesToString();
+      final result = json.decode(responseBody);
+
+
+      print("############");
+      print("ERRORRRRRR");
+      print(result);
+
+      return SignUpModel.fromJson(result);
+    } else {
+      throw Exception('Failed to Sign Up');
     }
-    return SignUpModel.fromJson(jsonDecode(response.body));
-  } else if (response.statusCode == 422) {
-    print(jsonDecode(response.body));
-    return SignUpModel.fromJson(jsonDecode(response.body));
-  }  else if (response.statusCode == 403) {
-    print(jsonDecode(response.body));
-    return SignUpModel.fromJson(jsonDecode(response.body));
-  } else if (response.statusCode == 400) {
-    print(jsonDecode(response.body));
-    return SignUpModel.fromJson(jsonDecode(response.body));
-  }
-  else {
-
+  } catch (e) {
+    print('Error: $e');
     throw Exception('Failed to Sign Up');
   }
 }
