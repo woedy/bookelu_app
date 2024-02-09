@@ -316,7 +316,7 @@ class _PasswordState extends State<Password> {
                                 widget.data['password2'] = password_confirmation.toString();
                                 print(widget.data);
 
-                                //_futureSignUp = signUpUser(widget.data);
+                                _futureSignUp = signUpUser(widget.data);
                                 //_futureSignIn = signInUser(user!, password!, platformType!);
 
 
