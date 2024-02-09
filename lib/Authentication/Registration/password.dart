@@ -192,7 +192,7 @@ class _PasswordState extends State<Password> {
                                             if (value!.isEmpty) {
                                               return 'Password is required';
                                             }
-                                            if (!RegExp(r'^(?=.*?[A-Z])(?=.*?[a-z])(?=.*?[0-9])(?=.*?[!@#\$%^&*])')
+                                            if (!RegExp(r'^(?=.*?[A-Z])(?=.*?[a-z])(?=.*?[0-9])(?=.*?[!@#\$%^&*_()-+=/.,<>?"~`£{}|:;])')
                                                 .hasMatch(value)) {
 
                                               ScaffoldMessenger.of(context).showSnackBar(
@@ -316,7 +316,7 @@ class _PasswordState extends State<Password> {
                                 widget.data['password2'] = password_confirmation.toString();
                                 print(widget.data);
 
-                                _futureSignUp = signUpUser(widget.data);
+                                //_futureSignUp = signUpUser(widget.data);
                                 //_futureSignIn = signInUser(user!, password!, platformType!);
 
 

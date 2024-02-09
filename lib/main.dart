@@ -1,3 +1,4 @@
+import 'package:bookelu_app/Authentication/Registration/password.dart';
 import 'package:bookelu_app/HomeScreen/home_screen.dart';
 import 'package:bookelu_app/SplashScreen/spalsh_screen.dart';
 import 'package:bookelu_app/theme.dart';
@@ -63,7 +64,7 @@ class _MyHomePageState extends State<MyHomePage> {
         builder: (BuildContext context, AsyncSnapshot snapshot) {
 
           return api_key == null ? SplashScreen() : HomeScreen();
-          //return SplashScreen();
+          //return Password(data: {},);
 
         });
   }
