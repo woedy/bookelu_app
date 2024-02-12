@@ -192,7 +192,7 @@ class _PasswordState extends State<Password> {
                                             if (value!.isEmpty) {
                                               return 'Password is required';
                                             }
-                                            if (!RegExp(r'^(?=.*?[A-Z])(?=.*?[a-z])(?=.*?[0-9])(?=.*?[!@#\$%^&*_()-+=/.,<>?"~`£{}|:;])')
+                                            if (!RegExp(r'^(?=.*?[A-Z])(?=.*?[a-z])(?=.*?[0-9])(?=.*?[-!@#\$%^&*_()\-+=/.,<>?"~`£{}|:;])')
                                                 .hasMatch(value)) {
 
                                               ScaffoldMessenger.of(context).showSnackBar(
