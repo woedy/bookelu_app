@@ -6,6 +6,7 @@ import 'package:bookelu_app/Authentication/Registration/resend_verification.dart
 import 'package:bookelu_app/Components/generic_button_dialog_box.dart';
 import 'package:bookelu_app/Components/generic_error_dialog_box.dart';
 import 'package:bookelu_app/Components/generic_loading_dialogbox.dart';
+import 'package:bookelu_app/HomeScreen/home_screen.dart';
 import 'package:bookelu_app/constants.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
@@ -295,7 +296,7 @@ class _VerifyEmailState extends State<VerifyEmail> {
               WidgetsBinding.instance.addPostFrameCallback((timeStamp) {
                 Navigator.pushReplacement(
                   context,
-                  MaterialPageRoute(builder: (context) => LoginScreen()),
+                  MaterialPageRoute(builder: (context) => HomeScreen()),
                 );
 
                 showDialog(

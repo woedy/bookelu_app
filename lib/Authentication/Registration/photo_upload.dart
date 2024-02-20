@@ -165,7 +165,7 @@ class _UploadPhotoRegState extends State<UploadPhotoReg> {
                             ),
                           ),
 
-                          SizedBox(height: 80),
+                          SizedBox(height: 50),
 
                           if(_image != null)...[
                             InkWell(
@@ -199,7 +199,35 @@ class _UploadPhotoRegState extends State<UploadPhotoReg> {
                                 ),
                               ),
                             ),
-                          ]
+                          ],
+
+                          InkWell(
+                            onTap: () {
+
+
+                              Navigator.push(context,
+                                  MaterialPageRoute(builder: (context) => Password(
+                                      data: widget.data
+                                  ))
+                              );
+
+                            },
+                            child: Container(
+                              padding: EdgeInsets.all(20),
+                              margin: EdgeInsets.all(15),
+                              height: 59,
+                              width: MediaQuery.of(context).size.width,
+                              decoration: BoxDecoration(
+                                  color: bookPrimary.withOpacity(0.2),
+                                  borderRadius: BorderRadius.circular(7)),
+                              child: Center(
+                                child: Text(
+                                  "Skip",
+                                  style: TextStyle(color: Colors.black),
+                                ),
+                              ),
+                            ),
+                          ),
 
                         ],
                       ),

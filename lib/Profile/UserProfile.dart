@@ -2,7 +2,7 @@ import 'dart:convert';
 
 import 'package:bookelu_app/Authentication/Login/login_screen.dart';
 import 'package:bookelu_app/Bookings/user_bookings.dart';
-import 'package:bookelu_app/HomeScreen/bookings_screen.dart';
+import 'package:bookelu_app/ShopView/shops_screen.dart';
 import 'package:bookelu_app/HomeScreen/home_screen.dart';
 import 'package:bookelu_app/Message/chat_screen.dart';
 import 'package:bookelu_app/constants.dart';
@@ -321,7 +321,7 @@ class _UserProfileState extends State<UserProfile> {
                       onTap: () {
                         Navigator.of(context).push(MaterialPageRoute(
                             builder: (BuildContext context) =>
-                                BookingsScreen()));
+                                AllShopsScreen()));
                       },
                       child: Column(
                         children: [

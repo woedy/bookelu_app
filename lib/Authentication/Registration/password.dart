@@ -1,5 +1,6 @@
 import 'dart:convert';
 
+import 'package:bookelu_app/Authentication/Login/login_screen.dart';
 import 'package:bookelu_app/Authentication/Registration/models/sign_up_model.dart';
 import 'package:bookelu_app/Authentication/Registration/registration_1.dart';
 import 'package:bookelu_app/Authentication/Registration/verify_email.dart';
@@ -21,7 +22,13 @@ Future<SignUpModel> signUpUser(data) async {
   request.headers['Accept'] = 'application/json';
   request.headers['Content-Type'] = 'multipart/form-data';
 
-  request.files.add(await http.MultipartFile.fromPath('photo', data["photo"]));
+  if (data["photo"] != null) {
+    request.files.add(await http.MultipartFile.fromPath('photo', data["photo"]));
+  } else {
+    // Handle the case where the photo is null, such as skipping the file addition
+    // request.files.add(await http.MultipartFile.fromString('photo', ''));
+  }
+
 
   request.fields['full_name'] = data["full_name"];
   request.fields['email'] = data["email"];
@@ -41,6 +48,11 @@ Future<SignUpModel> signUpUser(data) async {
       print("############");
       print("WE ARE INNNNNNNN");
       print(result);
+
+      await saveIDApiKey(result['data']['token'].toString());
+      await saveUserData(result['data']);
+
+
 
       return SignUpModel.fromJson(result);
 

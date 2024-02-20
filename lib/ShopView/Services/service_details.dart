@@ -5,7 +5,21 @@ import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 
 class ServiceDetails extends StatefulWidget {
-  const ServiceDetails({super.key});
+  final service_name;
+  final service_rating;
+  final shop_location;
+  final open;
+  final service_price;
+  final service_photo;
+
+  const ServiceDetails({super.key,
+    required this.service_name,
+    required this.service_rating,
+    required this.shop_location,
+    required this.open,
+    required this.service_price,
+    required this.service_photo,
+  });
 
   @override
   State<ServiceDetails> createState() => _ServiceDetailsState();
@@ -34,7 +48,7 @@ class _ServiceDetailsState extends State<ServiceDetails> {
                               height: 250,
                               decoration: BoxDecoration(
                                   image: DecorationImage(
-                                      image: AssetImage("assets/images/shop1.png"),
+                                      image: NetworkImage(hostNameMedia + widget.service_photo),
                                       fit: BoxFit.cover
                                   )
                               )
@@ -70,7 +84,7 @@ class _ServiceDetailsState extends State<ServiceDetails> {
                                             borderRadius: BorderRadius.circular(10)
                                         ),
                                         child: Text(
-                                          "\$70",
+                                          widget.service_price,
                                           style: TextStyle(fontSize: 16, color: Colors.white),
                                         ),
                                       ),
@@ -85,7 +99,7 @@ class _ServiceDetailsState extends State<ServiceDetails> {
                                           child: Column(
                                             crossAxisAlignment: CrossAxisAlignment.start,
                                             children: [
-                                              Text("Hair Re Touch", style: TextStyle(color: Colors.white,fontSize: 48, fontWeight: FontWeight.w500, fontFamily: "Fontspring"),),
+                                              Text(widget.service_name.toString(), style: TextStyle(color: Colors.white,fontSize: 48, fontWeight: FontWeight.w500, fontFamily: "Fontspring"),),
 
 
                                               Row(
@@ -95,13 +109,15 @@ class _ServiceDetailsState extends State<ServiceDetails> {
                                                   SizedBox(
                                                     width: 5,
                                                   ),
-                                                  Expanded(child: Text("8/101 Nicholson St, Camp Hill EC1A 1AE", style: TextStyle(color: Colors.white,fontSize: 14,),)),
+                                                  Expanded(child: Text(widget.shop_location.toString(), style: TextStyle(color: Colors.white,fontSize: 14,),)),
 
                                                 ],
                                               ),
                                               SizedBox(
                                                 height: 10,
                                               ),
+
+                                              if(widget.open)...[
                                               Container(
                                                   padding: EdgeInsets.all(2),
                                                   width: 70,
@@ -110,6 +126,16 @@ class _ServiceDetailsState extends State<ServiceDetails> {
                                                       borderRadius: BorderRadius.circular(5)
                                                   ),
                                                   child: Center(child: Text("Open", style: TextStyle(color: Colors.white,fontSize: 10,),))),
+                                              ]else...[
+                                                Container(
+                                                    padding: EdgeInsets.all(2),
+                                                    width: 70,
+                                                    decoration: BoxDecoration(
+                                                        color: Colors.red,
+                                                        borderRadius: BorderRadius.circular(5)
+                                                    ),
+                                                    child: Center(child: Text("Close", style: TextStyle(color: Colors.white,fontSize: 10,),))),
+                                              ]
 
                                             ],
                                           ),
@@ -118,7 +144,7 @@ class _ServiceDetailsState extends State<ServiceDetails> {
                                       Column(
                                         children: [
                                           Icon(Icons.star_rounded, color: Colors.yellow, size: 40,),
-                                          Text("4.5", style: TextStyle(color: Colors.white,fontSize: 20,),),
+                                          Text(widget.service_rating.toString(), style: TextStyle(color: Colors.white,fontSize: 20,),),
 
                                         ],
                                       )

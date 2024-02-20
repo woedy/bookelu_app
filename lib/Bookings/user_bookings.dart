@@ -1,5 +1,5 @@
 import 'package:bookelu_app/Bookings/cancel_booking.dart';
-import 'package:bookelu_app/HomeScreen/bookings_screen.dart';
+import 'package:bookelu_app/ShopView/shops_screen.dart';
 import 'package:bookelu_app/HomeScreen/home_screen.dart';
 import 'package:bookelu_app/Message/chat_screen.dart';
 import 'package:bookelu_app/Profile/UserProfile.dart';
@@ -192,7 +192,7 @@ class _UserBookingsState extends State<UserBookings> {
                     ),
                     InkWell(
                       onTap: (){
-                        Navigator.of(context).push(MaterialPageRoute(builder: (BuildContext context) => BookingsScreen()));
+                        Navigator.of(context).push(MaterialPageRoute(builder: (BuildContext context) => AllShopsScreen()));
 
 
                       },
