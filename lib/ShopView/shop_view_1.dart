@@ -16,6 +16,7 @@ import 'package:http/http.dart' as http;
 
 
 Future<ShopModel> get_shop_detail(shop_id) async {
+  var token = await getApiPref();
 
   var theurl = hostName + "shop/shop-details/?shop_id=" + shop_id.toString();
   print("theurltheurltheurltheurl");
@@ -27,7 +28,7 @@ Future<ShopModel> get_shop_detail(shop_id) async {
     headers: <String, String>{
       'Content-Type': 'application/json; charset=UTF-8',
       'Accept': 'application/json',
-      'Authorization': (await getApiPref()).toString()
+      'Authorization': 'Token '  + token.toString()
     },
   );
 
@@ -136,7 +137,7 @@ class _ShopViewScreen1State extends State<ShopViewScreen1> {
                                         height: 250,
                                         decoration: BoxDecoration(
                                             image: DecorationImage(
-                                                image: AssetImage("assets/images/shop1.png"),
+                                                image: NetworkImage(hostNameMedia + _shopDetail.shopExterior![0].photo!),
                                                 fit: BoxFit.cover
                                             )
                                         )

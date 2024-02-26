@@ -40,7 +40,6 @@ Future<SignInModel> signInUser(String email, String password) async {
       await saveIDApiKey(result['data']['token'].toString());
 
 
-
       await saveUserData(result['data']);
 
 
@@ -516,6 +515,11 @@ class _LoginScreenState extends State<LoginScreen> {
             if(data.message == "Successful") {
 
               WidgetsBinding.instance.addPostFrameCallback((timeStamp) {
+                Navigator.pushReplacement(
+                  context,
+                  MaterialPageRoute(builder: (context) => HomeScreen()),
+                );
+
                 showDialog(
                     barrierDismissible: true,
                     context: context,
@@ -524,20 +528,6 @@ class _LoginScreenState extends State<LoginScreen> {
                       return SuccessDialogBox(text: "Login Successful");
                     }
                 );
-                Future.delayed(Duration(milliseconds: 500), () {
-                  // Pop the dialog
-                  //Navigator.of(context).pop();
-
-                  // Navigate to the dashboard
-                  Navigator.pushReplacement(
-                    context,
-                    MaterialPageRoute(builder: (context) => HomeScreen()),
-                  );
-                });
-
-
-
-
               });
 
 

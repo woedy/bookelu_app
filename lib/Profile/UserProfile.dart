@@ -2,6 +2,7 @@ import 'dart:convert';
 
 import 'package:bookelu_app/Authentication/Login/login_screen.dart';
 import 'package:bookelu_app/Bookings/user_bookings.dart';
+import 'package:bookelu_app/Profile/edit_profile.dart';
 import 'package:bookelu_app/ShopView/shops_screen.dart';
 import 'package:bookelu_app/HomeScreen/home_screen.dart';
 import 'package:bookelu_app/Message/chat_screen.dart';
@@ -29,6 +30,7 @@ class _UserProfileState extends State<UserProfile> {
 
   @override
   Widget build(BuildContext context) {
+
     return Scaffold(
       body: Container(
         child: SafeArea(
@@ -108,9 +110,9 @@ class _UserProfileState extends State<UserProfile> {
                           Expanded(
                             child: InkWell(
                               onTap: () {
-                                /* Navigator.push(context,
-                                                      MaterialPageRoute(builder: (context) => VerifyEmail())
-                                                  );*/
+                                 Navigator.push(context,
+                                                      MaterialPageRoute(builder: (context) => EditProfile(userData: userData))
+                                                  );
                               },
                               child: Container(
                                 padding: EdgeInsets.all(20),

@@ -14,12 +14,14 @@ import 'package:http/http.dart' as http;
 
 Future<ListShopModel> get_shop_data() async {
 
+  var token = await getApiPref();
+
   final response = await http.get(
     Uri.parse(hostName + "shop/list-shops/"),
     headers: <String, String>{
       'Content-Type': 'application/json; charset=UTF-8',
       'Accept': 'application/json',
-      'Authorization': (await getApiPref()).toString()
+      'Authorization': 'Token '  + token.toString()
     },
   );
 
@@ -242,29 +244,18 @@ class _AllShopsScreenState extends State<AllShopsScreen> {
                                                         },
                                                       ),
                                                     ),
-                                                    InkWell(
-                                                      onTap: () {
-                                                        /*
-
-                                              Navigator.push(context,
-                                                  MaterialPageRoute(builder: (context) => VerifyEmail())
-                                              );
-                               */
-
-                                                      },
-                                                      child: Container(
-                                                        padding: EdgeInsets.all(10),
-                                                        margin: EdgeInsets.symmetric(horizontal: 0, vertical: 15),
-                                                        height: 45,
-                                                        width: MediaQuery.of(context).size.width,
-                                                        decoration: BoxDecoration(
-                                                            color: bookPrimary,
-                                                            borderRadius: BorderRadius.circular(7)),
-                                                        child: Center(
-                                                          child: Text(
-                                                            "Book",
-                                                            style: TextStyle(color: Colors.white),
-                                                          ),
+                                                    Container(
+                                                      padding: EdgeInsets.all(10),
+                                                      margin: EdgeInsets.symmetric(horizontal: 0, vertical: 15),
+                                                      height: 45,
+                                                      width: MediaQuery.of(context).size.width,
+                                                      decoration: BoxDecoration(
+                                                          color: bookPrimary,
+                                                          borderRadius: BorderRadius.circular(7)),
+                                                      child: Center(
+                                                        child: Text(
+                                                          "Book",
+                                                          style: TextStyle(color: Colors.white),
                                                         ),
                                                       ),
                                                     ),

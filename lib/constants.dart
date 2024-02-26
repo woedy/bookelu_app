@@ -14,15 +14,15 @@ const bodyText2 = Color(0xffffffff);
 const clay = Color(0xffa499b3);
 
 
-const hostName = "http://143.42.21.193:4040/api/";
-const hostNameMedia = "http://143.42.21.193:4040";
+//const hostName = "http://143.42.21.193:4040/api/";
+//const hostNameMedia = "http://143.42.21.193:4040";
 
 //const hostName = "http://192.168.43.235:4040/api/";
 //const hostNameMedia = "http://192.168.43.235:4040";
 
 
-//const hostName = "http://192.168.43.235:8000/api/";
-//const hostNameMedia = "http://192.168.43.235:8000";
+const hostName = "http://192.168.43.223:8000/api/";
+const hostNameMedia = "http://192.168.43.223:8000";
 
 
 Future<String?> getApiPref() async {
@@ -36,6 +36,7 @@ Future<String?> getUserIDPref() async {
   SharedPreferences prefs = await SharedPreferences.getInstance();
   return prefs.getString("USER_ID");
 }
+
 
 
 
