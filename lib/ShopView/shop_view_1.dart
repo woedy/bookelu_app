@@ -389,268 +389,266 @@ class _ShopViewScreen1State extends State<ShopViewScreen1> {
   }
 
   Widget _services_page(service, parkages, bool? open, shop_location){
-    return Expanded(
-      child: Column(
-        children: [
-          Container(
-            height: 140,
-            //color: Colors.red,
-            child: ListView.builder(
-              scrollDirection: Axis.horizontal,
-              itemCount: service.length,
-              itemBuilder: (context, index){
-                return  Container(
-                  margin: EdgeInsets.symmetric(horizontal: 20),
-                  child: Column(
-                    children: [
-                      Container(
-                        height: 89,
-                        padding: EdgeInsets.all(15),
-                        decoration: BoxDecoration(
-                            color: Colors.grey.withOpacity(0.2),
-                            borderRadius: BorderRadius.circular(50)
-                        ),
-                        child: Column(
-                          mainAxisAlignment: MainAxisAlignment.center,
-                          children: [
-                            Image.asset("assets/icons/hair_cut.png", height: 35,),
-
-                          ],
-                        ),
+    return Column(
+      children: [
+        Container(
+          height: 140,
+          //color: Colors.red,
+          child: ListView.builder(
+            scrollDirection: Axis.horizontal,
+            itemCount: service.length,
+            itemBuilder: (context, index){
+              return  Container(
+                margin: EdgeInsets.symmetric(horizontal: 20),
+                child: Column(
+                  children: [
+                    Container(
+                      height: 89,
+                      padding: EdgeInsets.all(15),
+                      decoration: BoxDecoration(
+                          color: Colors.grey.withOpacity(0.2),
+                          borderRadius: BorderRadius.circular(50)
                       ),
-                      SizedBox(
-                        height: 10,
-                      ),
-                      Text(
-                        service[index].serviceType,
-                        style: TextStyle(fontSize: 10,),
-                      ),
-                    ],
-                  ),
-                );
-              },
+                      child: Column(
+                        mainAxisAlignment: MainAxisAlignment.center,
+                        children: [
+                          Image.asset("assets/icons/hair_cut.png", height: 35,),
 
-            /*  children: [
-
-
-
-                Container(
-                  margin: EdgeInsets.symmetric(horizontal: 20),
-                  child: Column(
-                    children: [
-                      Container(
-                        height: 89,
-                        padding: EdgeInsets.all(15),
-                        decoration: BoxDecoration(
-                            color: Colors.grey.withOpacity(0.2),
-                            borderRadius: BorderRadius.circular(50)
-                        ),
-                        child: Column(
-                          mainAxisAlignment: MainAxisAlignment.center,
-                          children: [
-                            Image.asset("assets/icons/hair_cut.png", height: 35,),
-
-                          ],
-                        ),
+                        ],
                       ),
-                      SizedBox(
-                        height: 10,
-                      ),
-                      Text(
-                        "Haircut",
-                        style: TextStyle(fontSize: 10,),
-                      ),
-                    ],
-                  ),
+                    ),
+                    SizedBox(
+                      height: 10,
+                    ),
+                    Text(
+                      service[index].serviceType,
+                      style: TextStyle(fontSize: 10,),
+                    ),
+                  ],
                 ),
-                Container(
-                  margin: EdgeInsets.symmetric(horizontal: 20),
-                  child: Column(
-                    children: [
-                      Container(
-                        height: 89,
-                        padding: EdgeInsets.all(15),
-                        decoration: BoxDecoration(
-                            color: Colors.grey.withOpacity(0.2),
-                            borderRadius: BorderRadius.circular(50)
-                        ),
-                        child: Column(
-                          mainAxisAlignment: MainAxisAlignment.center,
-                          children: [
-                            Image.asset("assets/icons/styilng.png", height: 35,),
-                          ],
-                        ),
-                      ),
-                      SizedBox(
-                        height: 10,
-                      ),
-                      Text(
-                        "Styling",
-                        style: TextStyle(fontSize: 10,),
-                      ),
-                    ],
-                  ),
-                ),
-                Container(
-                  margin: EdgeInsets.symmetric(horizontal: 20),
-                  child: Column(
-                    children: [
-                      Container(
-                        height: 89,
-                        padding: EdgeInsets.all(15),
-                        decoration: BoxDecoration(
-                            color: Colors.grey.withOpacity(0.2),
-                            borderRadius: BorderRadius.circular(50)
-                        ),
-                        child: Column(
-                          mainAxisAlignment: MainAxisAlignment.center,
-                          children: [
-                            Image.asset("assets/icons/dryer.png", height: 35,),
-                          ],
-                        ),
-                      ),
-                      SizedBox(
-                        height: 10,
-                      ),
-                      Text(
-                        "Hair Dryer",
-                        style: TextStyle(fontSize: 10,),
-                      ),
-                    ],
-                  ),
-                ),
-                Container(
-                  margin: EdgeInsets.symmetric(horizontal: 20),
-                  child: Column(
-                    children: [
-                      Container(
-                        height: 89,
-                        padding: EdgeInsets.all(15),
-                        decoration: BoxDecoration(
-                            color: Colors.grey.withOpacity(0.2),
-                            borderRadius: BorderRadius.circular(50)
-                        ),
-                        child: Column(
-                          mainAxisAlignment: MainAxisAlignment.center,
-                          children: [
-                            Image.asset("assets/icons/massage.png", height: 35,),
+              );
+            },
 
-                          ],
-                        ),
-                      ),
-                      SizedBox(
-                        height: 10,
-                      ),
-                      Text(
-                        "Massage",
-                        style: TextStyle(fontSize: 10,),
-                      ),
-                    ],
-                  ),
-                ),
+          /*  children: [
 
-              ],*/
-            ),
+
+
+              Container(
+                margin: EdgeInsets.symmetric(horizontal: 20),
+                child: Column(
+                  children: [
+                    Container(
+                      height: 89,
+                      padding: EdgeInsets.all(15),
+                      decoration: BoxDecoration(
+                          color: Colors.grey.withOpacity(0.2),
+                          borderRadius: BorderRadius.circular(50)
+                      ),
+                      child: Column(
+                        mainAxisAlignment: MainAxisAlignment.center,
+                        children: [
+                          Image.asset("assets/icons/hair_cut.png", height: 35,),
+
+                        ],
+                      ),
+                    ),
+                    SizedBox(
+                      height: 10,
+                    ),
+                    Text(
+                      "Haircut",
+                      style: TextStyle(fontSize: 10,),
+                    ),
+                  ],
+                ),
+              ),
+              Container(
+                margin: EdgeInsets.symmetric(horizontal: 20),
+                child: Column(
+                  children: [
+                    Container(
+                      height: 89,
+                      padding: EdgeInsets.all(15),
+                      decoration: BoxDecoration(
+                          color: Colors.grey.withOpacity(0.2),
+                          borderRadius: BorderRadius.circular(50)
+                      ),
+                      child: Column(
+                        mainAxisAlignment: MainAxisAlignment.center,
+                        children: [
+                          Image.asset("assets/icons/styilng.png", height: 35,),
+                        ],
+                      ),
+                    ),
+                    SizedBox(
+                      height: 10,
+                    ),
+                    Text(
+                      "Styling",
+                      style: TextStyle(fontSize: 10,),
+                    ),
+                  ],
+                ),
+              ),
+              Container(
+                margin: EdgeInsets.symmetric(horizontal: 20),
+                child: Column(
+                  children: [
+                    Container(
+                      height: 89,
+                      padding: EdgeInsets.all(15),
+                      decoration: BoxDecoration(
+                          color: Colors.grey.withOpacity(0.2),
+                          borderRadius: BorderRadius.circular(50)
+                      ),
+                      child: Column(
+                        mainAxisAlignment: MainAxisAlignment.center,
+                        children: [
+                          Image.asset("assets/icons/dryer.png", height: 35,),
+                        ],
+                      ),
+                    ),
+                    SizedBox(
+                      height: 10,
+                    ),
+                    Text(
+                      "Hair Dryer",
+                      style: TextStyle(fontSize: 10,),
+                    ),
+                  ],
+                ),
+              ),
+              Container(
+                margin: EdgeInsets.symmetric(horizontal: 20),
+                child: Column(
+                  children: [
+                    Container(
+                      height: 89,
+                      padding: EdgeInsets.all(15),
+                      decoration: BoxDecoration(
+                          color: Colors.grey.withOpacity(0.2),
+                          borderRadius: BorderRadius.circular(50)
+                      ),
+                      child: Column(
+                        mainAxisAlignment: MainAxisAlignment.center,
+                        children: [
+                          Image.asset("assets/icons/massage.png", height: 35,),
+
+                        ],
+                      ),
+                    ),
+                    SizedBox(
+                      height: 10,
+                    ),
+                    Text(
+                      "Massage",
+                      style: TextStyle(fontSize: 10,),
+                    ),
+                  ],
+                ),
+              ),
+
+            ],*/
           ),
-          Expanded(
-            child: ListView.builder(
-              itemCount: parkages.length,
-              itemBuilder: (context, index) {
-                return  InkWell(
-                  onTap: (){
+        ),
+        Expanded(
+          child: ListView.builder(
+            itemCount: parkages.length,
+            itemBuilder: (context, index) {
+              return  InkWell(
+                onTap: (){
 
 
-                    Navigator.of(context).push(MaterialPageRoute(builder: (BuildContext context) => ServiceDetails(
-                      service_name: parkages[index].packageName,
-                      service_rating: parkages[index].rating,
-                      shop_location: shop_location,
-                      open: open,
-                      service_price: parkages[index].price,
-                      service_photo: parkages[index].photo,
-                    )));
-                  },
-                  child: Column(
-                    children: [
-                      Container(
-                        height: 200,
-                        child: Stack(
-                          children: [
-                            Container(
-                              height: 200,
+                  Navigator.of(context).push(MaterialPageRoute(builder: (BuildContext context) => ServiceDetails(
+                    service_name: parkages[index].packageName,
+                    service_rating: parkages[index].rating,
+                    shop_location: shop_location,
+                    open: open,
+                    service_price: parkages[index].price,
+                    service_photo: parkages[index].photo,
+                  )));
+                },
+                child: Column(
+                  children: [
+                    Container(
+                      height: 200,
+                      child: Stack(
+                        children: [
+                          Container(
+                            height: 200,
+                            decoration: BoxDecoration(
+                              //color: Colors.red,
+                                borderRadius: BorderRadius.circular(20),
+                                image: DecorationImage(
+                                    image: NetworkImage(hostNameMedia + parkages[index].photo.toString()),
+                                    fit: BoxFit.cover
+                                )
+                            ),
+                          ),
+                          Positioned(
+                            bottom: 0,
+                            left: 0,
+                            right: 0,
+                            child: Container(
+                              height: 70,
+                              margin: EdgeInsets.all(10),
+                              padding: EdgeInsets.all(10),
                               decoration: BoxDecoration(
-                                //color: Colors.red,
-                                  borderRadius: BorderRadius.circular(20),
-                                  image: DecorationImage(
-                                      image: NetworkImage(hostNameMedia + parkages[index].photo.toString()),
-                                      fit: BoxFit.cover
-                                  )
+                                  color: Colors.white,
+                                  borderRadius: BorderRadius.circular(10)
+                              ),
+                              child: Row(
+                                mainAxisAlignment: MainAxisAlignment.spaceBetween,
+
+                                children: [
+                                  Column(
+                                    crossAxisAlignment: CrossAxisAlignment.start,
+                                    mainAxisAlignment: MainAxisAlignment.center,
+                                    children: [
+                                      Text(
+                                        parkages[index].packageName.toString(),
+                                        style: TextStyle(fontSize: 16,),
+                                      ),
+                                      Row(
+                                        children: [
+                                          Icon(Icons.star, color: Colors.yellow, size: 15,),
+                                          Icon(Icons.star, color: Colors.yellow, size: 15,),
+                                          Icon(Icons.star, color: Colors.yellow, size: 15,),
+                                          Icon(Icons.star, color: Colors.yellow, size: 15,),
+                                          Icon(Icons.star, color: Colors.yellow, size: 15,),
+                                        ],
+                                      ),
+                                    ],
+                                  ),
+                                  Container(
+                                    padding: EdgeInsets.all(10),
+                                    decoration: BoxDecoration(
+                                        color: Colors.black,
+                                        borderRadius: BorderRadius.circular(10)
+                                    ),
+                                    child: Text(
+                                      parkages[index].price.toString(),
+                                      style: TextStyle(fontSize: 16, color: Colors.white),
+                                    ),
+                                  ),
+
+                                ],
                               ),
                             ),
-                            Positioned(
-                              bottom: 0,
-                              left: 0,
-                              right: 0,
-                              child: Container(
-                                height: 70,
-                                margin: EdgeInsets.all(10),
-                                padding: EdgeInsets.all(10),
-                                decoration: BoxDecoration(
-                                    color: Colors.white,
-                                    borderRadius: BorderRadius.circular(10)
-                                ),
-                                child: Row(
-                                  mainAxisAlignment: MainAxisAlignment.spaceBetween,
-
-                                  children: [
-                                    Column(
-                                      crossAxisAlignment: CrossAxisAlignment.start,
-                                      mainAxisAlignment: MainAxisAlignment.center,
-                                      children: [
-                                        Text(
-                                          parkages[index].packageName.toString(),
-                                          style: TextStyle(fontSize: 16,),
-                                        ),
-                                        Row(
-                                          children: [
-                                            Icon(Icons.star, color: Colors.yellow, size: 15,),
-                                            Icon(Icons.star, color: Colors.yellow, size: 15,),
-                                            Icon(Icons.star, color: Colors.yellow, size: 15,),
-                                            Icon(Icons.star, color: Colors.yellow, size: 15,),
-                                            Icon(Icons.star, color: Colors.yellow, size: 15,),
-                                          ],
-                                        ),
-                                      ],
-                                    ),
-                                    Container(
-                                      padding: EdgeInsets.all(10),
-                                      decoration: BoxDecoration(
-                                          color: Colors.black,
-                                          borderRadius: BorderRadius.circular(10)
-                                      ),
-                                      child: Text(
-                                        parkages[index].price.toString(),
-                                        style: TextStyle(fontSize: 16, color: Colors.white),
-                                      ),
-                                    ),
-
-                                  ],
-                                ),
-                              ),
-                            ),
-                          ],
-                        ),
+                          ),
+                        ],
                       ),
-                      SizedBox(
-                        height: 15,
-                      ),
-                    ],
-                  ),
-                );
-              },
-            ),
+                    ),
+                    SizedBox(
+                      height: 15,
+                    ),
+                  ],
+                ),
+              );
+            },
           ),
-        ],
-      ),
+        ),
+      ],
     );
   }
 
@@ -670,269 +668,263 @@ class _ShopViewScreen1State extends State<ShopViewScreen1> {
       all_images.add(_image);
     }
 
-    return Expanded(
-      child: Column(
-        children: [
+    return Column(
+      children: [
 
 
 
-          Expanded(
-            child: GridView.builder(
-              gridDelegate: SliverGridDelegateWithFixedCrossAxisCount(
-                crossAxisCount: 2,
-                crossAxisSpacing: 15.0,
-                mainAxisSpacing: 15.0,
-              ),
-              itemCount: all_images.length, // Replace with the actual number of items you want to display
-              itemBuilder: (BuildContext context, int index) {
-                return Container(
-                  //height: 150,
-                  decoration: BoxDecoration(
-                    //color: Colors.red,
-                    borderRadius: BorderRadius.circular(20),
-                    image: DecorationImage(
-                      image: NetworkImage(hostNameMedia + all_images[index].photo),
-                      fit: BoxFit.cover
-
-                    )
-
-                  ),
-                );
-              },
+        Expanded(
+          child: GridView.builder(
+            gridDelegate: SliverGridDelegateWithFixedCrossAxisCount(
+              crossAxisCount: 2,
+              crossAxisSpacing: 15.0,
+              mainAxisSpacing: 15.0,
             ),
+            itemCount: all_images.length, // Replace with the actual number of items you want to display
+            itemBuilder: (BuildContext context, int index) {
+              return Container(
+                //height: 150,
+                decoration: BoxDecoration(
+                  //color: Colors.red,
+                  borderRadius: BorderRadius.circular(20),
+                  image: DecorationImage(
+                    image: NetworkImage(hostNameMedia + all_images[index].photo),
+                    fit: BoxFit.cover
+
+                  )
+
+                ),
+              );
+            },
           ),
+        ),
 
 
-        ],
-      ),
+      ],
     );
   }
 
   Widget _staff_page(data){
-    return Expanded(
-      child: Column(
-        children: [
+    return Column(
+      children: [
 
-          Container(
-            padding: EdgeInsets.symmetric(horizontal: 10),
-            decoration: BoxDecoration(
-                color: Colors.white,
-                borderRadius: BorderRadius.circular(10),
-                border:
-                Border.all(color: Colors.black.withOpacity(0.1))),
-            child: Row(
-              children: [
-                Expanded(
-                  child: TextFormField(
-                    style: TextStyle(color: Colors.black),
-                    decoration: InputDecoration(
-                      //hintText: 'Enter Username/Email',
+        Container(
+          padding: EdgeInsets.symmetric(horizontal: 10),
+          decoration: BoxDecoration(
+              color: Colors.white,
+              borderRadius: BorderRadius.circular(10),
+              border:
+              Border.all(color: Colors.black.withOpacity(0.1))),
+          child: Row(
+            children: [
+              Expanded(
+                child: TextFormField(
+                  style: TextStyle(color: Colors.black),
+                  decoration: InputDecoration(
+                    //hintText: 'Enter Username/Email',
 
-                      hintStyle: TextStyle(
-                          color: Colors.black.withOpacity(0.7),
-                          fontWeight: FontWeight.normal),
-                      labelText: "Search staff here",
+                    hintStyle: TextStyle(
+                        color: Colors.black.withOpacity(0.7),
+                        fontWeight: FontWeight.normal),
+                    labelText: "Search staff here",
 
-                      labelStyle: TextStyle(fontSize: 13,
-                          color: Colors.black.withOpacity(0.5)),
-                      enabledBorder: UnderlineInputBorder(
-                          borderSide: BorderSide(color: Colors.white)),
-                      focusedBorder: UnderlineInputBorder(
-                          borderSide: BorderSide(color: Colors.white)),
-                      border: InputBorder.none,
-                    ),
-                    inputFormatters: [
-                      LengthLimitingTextInputFormatter(225),
-                      PasteTextInputFormatter(),
-                    ],
-
-                    textInputAction: TextInputAction.next,
-                    autofocus: false,
-                    onSaved: (value) {
-                      setState(() {
-                        //email = value;
-                      });
-                    },
+                    labelStyle: TextStyle(fontSize: 13,
+                        color: Colors.black.withOpacity(0.5)),
+                    enabledBorder: UnderlineInputBorder(
+                        borderSide: BorderSide(color: Colors.white)),
+                    focusedBorder: UnderlineInputBorder(
+                        borderSide: BorderSide(color: Colors.white)),
+                    border: InputBorder.none,
                   ),
-                ),
-                Row(
-                  children: [
-
-                    Icon(Icons.search),
-
+                  inputFormatters: [
+                    LengthLimitingTextInputFormatter(225),
+                    PasteTextInputFormatter(),
                   ],
-                )
-              ],
-            ),
-          ),
 
-          SizedBox(height: 10,),
-
-          Expanded(
-            child: GridView.builder(
-              gridDelegate: SliverGridDelegateWithFixedCrossAxisCount(
-                crossAxisCount: 2,
-                crossAxisSpacing: 30.0,
-                mainAxisSpacing: 15.0,
+                  textInputAction: TextInputAction.next,
+                  autofocus: false,
+                  onSaved: (value) {
+                    setState(() {
+                      //email = value;
+                    });
+                  },
+                ),
               ),
-              itemCount: data.length, // Replace with the actual number of items you want to display
-              itemBuilder: (BuildContext context, int index) {
-                return Container(
-                  padding: EdgeInsets.all(10),
-                  decoration: BoxDecoration(
-                    color: Colors.grey.withOpacity(0.2),
-                      borderRadius: BorderRadius.circular(15),
+              Row(
+                children: [
+
+                  Icon(Icons.search),
+
+                ],
+              )
+            ],
+          ),
+        ),
+
+        SizedBox(height: 10,),
+
+        Expanded(
+          child: GridView.builder(
+            gridDelegate: SliverGridDelegateWithFixedCrossAxisCount(
+              crossAxisCount: 2,
+              crossAxisSpacing: 30.0,
+              mainAxisSpacing: 15.0,
+            ),
+            itemCount: data.length, // Replace with the actual number of items you want to display
+            itemBuilder: (BuildContext context, int index) {
+              return Container(
+                padding: EdgeInsets.all(10),
+                decoration: BoxDecoration(
+                  color: Colors.grey.withOpacity(0.2),
+                    borderRadius: BorderRadius.circular(15),
 
 
-                  ),
-                  child: Column(
-                    crossAxisAlignment: CrossAxisAlignment.start,
-                    children: [
-                      Expanded(
-                        child: Container(
-                          //height: 70,
-                          decoration: BoxDecoration(
-                            //color: Colors.red,
-                              borderRadius: BorderRadius.circular(15),
-                              image: DecorationImage(
-                                  image: NetworkImage(hostNameMedia + data[index].photo.toString()),
-                                  fit: BoxFit.cover
+                ),
+                child: Column(
+                  crossAxisAlignment: CrossAxisAlignment.start,
+                  children: [
+                    Expanded(
+                      child: Container(
+                        //height: 70,
+                        decoration: BoxDecoration(
+                          //color: Colors.red,
+                            borderRadius: BorderRadius.circular(15),
+                            image: DecorationImage(
+                                image: NetworkImage(hostNameMedia + data[index].photo.toString()),
+                                fit: BoxFit.cover
 
-                              )
+                            )
 
-                          ),
                         ),
                       ),
-                      SizedBox(height: 10,),
-                      Text(data[index].staffName.toString(), style: TextStyle(fontSize: 10, fontWeight: FontWeight.w500),),
-                      Text(data[index].role.toString(), style: TextStyle(fontSize: 10,),),
-                      Row(
-                        children: [
-                          Icon(Icons.star_rounded, size: 15, color: Colors.yellow,),
-                          Icon(Icons.star_rounded, size: 15, color: Colors.yellow,),
-                          Icon(Icons.star_rounded, size: 15, color: Colors.yellow,),
-                          Icon(Icons.star_rounded, size: 15, color: Colors.yellow,),
-                          Icon(Icons.star_rounded, size: 15, color: Colors.yellow,)
-                        ],
-                      )
+                    ),
+                    SizedBox(height: 10,),
+                    Text(data[index].staffName.toString(), style: TextStyle(fontSize: 10, fontWeight: FontWeight.w500),),
+                    Text(data[index].role.toString(), style: TextStyle(fontSize: 10,),),
+                    Row(
+                      children: [
+                        Icon(Icons.star_rounded, size: 15, color: Colors.yellow,),
+                        Icon(Icons.star_rounded, size: 15, color: Colors.yellow,),
+                        Icon(Icons.star_rounded, size: 15, color: Colors.yellow,),
+                        Icon(Icons.star_rounded, size: 15, color: Colors.yellow,),
+                        Icon(Icons.star_rounded, size: 15, color: Colors.yellow,)
+                      ],
+                    )
 
-                    ],
-                  ),
-                );
-              },
-            ),
+                  ],
+                ),
+              );
+            },
           ),
-        ],
-      ),
+        ),
+      ],
     );
   }
 
 
   Widget _package_page(data, bool? open, shop_location){
-    return Expanded(
-      child: Column(
-        children: [
+    return Column(
+      children: [
 
-          Expanded(
-            child: ListView.builder(
-              itemCount: data.length,
-              itemBuilder: (context, index) {
-                return  InkWell(
-                  onTap: (){
+        Expanded(
+          child: ListView.builder(
+            itemCount: data.length,
+            itemBuilder: (context, index) {
+              return  InkWell(
+                onTap: (){
 
-                    Navigator.of(context).push(MaterialPageRoute(builder: (BuildContext context) => ServiceDetails(
-                      service_name: data[index].packageName,
-                      service_rating: data[index].rating,
-                      shop_location: shop_location,
-                      open: open,
-                      service_price: data[index].price,
-                      service_photo: data[index].photo,
+                  Navigator.of(context).push(MaterialPageRoute(builder: (BuildContext context) => ServiceDetails(
+                    service_name: data[index].packageName,
+                    service_rating: data[index].rating,
+                    shop_location: shop_location,
+                    open: open,
+                    service_price: data[index].price,
+                    service_photo: data[index].photo,
 
 
-                    )));
-                  },
-                  child: Column(
-                    children: [
-                      Container(
-                        height: 200,
-                        child: Stack(
-                          children: [
-                            Container(
-                              height: 200,
+                  )));
+                },
+                child: Column(
+                  children: [
+                    Container(
+                      height: 200,
+                      child: Stack(
+                        children: [
+                          Container(
+                            height: 200,
+                            decoration: BoxDecoration(
+                              //color: Colors.red,
+                                borderRadius: BorderRadius.circular(20),
+                                image: DecorationImage(
+                                    image: NetworkImage(hostNameMedia + data[index].photo),
+                                    fit: BoxFit.cover
+                                )
+                            ),
+                          ),
+                          Positioned(
+                            bottom: 0,
+                            left: 0,
+                            right: 0,
+                            child: Container(
+                              height: 70,
+                              margin: EdgeInsets.all(10),
+                              padding: EdgeInsets.all(10),
                               decoration: BoxDecoration(
-                                //color: Colors.red,
-                                  borderRadius: BorderRadius.circular(20),
-                                  image: DecorationImage(
-                                      image: NetworkImage(hostNameMedia + data[index].photo),
-                                      fit: BoxFit.cover
-                                  )
+                                  color: Colors.white,
+                                  borderRadius: BorderRadius.circular(10)
+                              ),
+                              child: Row(
+                                mainAxisAlignment: MainAxisAlignment.spaceBetween,
+
+                                children: [
+                                  Column(
+                                    crossAxisAlignment: CrossAxisAlignment.start,
+                                    mainAxisAlignment: MainAxisAlignment.center,
+                                    children: [
+                                      Text(
+                                        data[index].packageName,
+                                        style: TextStyle(fontSize: 16,),
+                                      ),
+                                      Row(
+                                        children: [
+                                          Icon(Icons.star, color: Colors.yellow, size: 15,),
+                                          Icon(Icons.star, color: Colors.yellow, size: 15,),
+                                          Icon(Icons.star, color: Colors.yellow, size: 15,),
+                                          Icon(Icons.star, color: Colors.yellow, size: 15,),
+                                          Icon(Icons.star, color: Colors.yellow, size: 15,),
+                                        ],
+                                      ),
+                                    ],
+                                  ),
+                                  Container(
+                                    padding: EdgeInsets.all(10),
+                                    decoration: BoxDecoration(
+                                        color: Colors.black,
+                                        borderRadius: BorderRadius.circular(10)
+                                    ),
+                                    child: Text(
+                                      data[index].price,
+                                      style: TextStyle(fontSize: 16, color: Colors.white),
+                                    ),
+                                  ),
+
+                                ],
                               ),
                             ),
-                            Positioned(
-                              bottom: 0,
-                              left: 0,
-                              right: 0,
-                              child: Container(
-                                height: 70,
-                                margin: EdgeInsets.all(10),
-                                padding: EdgeInsets.all(10),
-                                decoration: BoxDecoration(
-                                    color: Colors.white,
-                                    borderRadius: BorderRadius.circular(10)
-                                ),
-                                child: Row(
-                                  mainAxisAlignment: MainAxisAlignment.spaceBetween,
-
-                                  children: [
-                                    Column(
-                                      crossAxisAlignment: CrossAxisAlignment.start,
-                                      mainAxisAlignment: MainAxisAlignment.center,
-                                      children: [
-                                        Text(
-                                          data[index].packageName,
-                                          style: TextStyle(fontSize: 16,),
-                                        ),
-                                        Row(
-                                          children: [
-                                            Icon(Icons.star, color: Colors.yellow, size: 15,),
-                                            Icon(Icons.star, color: Colors.yellow, size: 15,),
-                                            Icon(Icons.star, color: Colors.yellow, size: 15,),
-                                            Icon(Icons.star, color: Colors.yellow, size: 15,),
-                                            Icon(Icons.star, color: Colors.yellow, size: 15,),
-                                          ],
-                                        ),
-                                      ],
-                                    ),
-                                    Container(
-                                      padding: EdgeInsets.all(10),
-                                      decoration: BoxDecoration(
-                                          color: Colors.black,
-                                          borderRadius: BorderRadius.circular(10)
-                                      ),
-                                      child: Text(
-                                        data[index].price,
-                                        style: TextStyle(fontSize: 16, color: Colors.white),
-                                      ),
-                                    ),
-
-                                  ],
-                                ),
-                              ),
-                            ),
-                          ],
-                        ),
+                          ),
+                        ],
                       ),
-                      SizedBox(
-                        height: 15,
-                      ),
-                    ],
-                  ),
-                );
-              },
-            ),
+                    ),
+                    SizedBox(
+                      height: 15,
+                    ),
+                  ],
+                ),
+              );
+            },
           ),
-        ],
-      ),
+        ),
+      ],
     );
   }
 
