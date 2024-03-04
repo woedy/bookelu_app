@@ -14,8 +14,11 @@ const bodyText2 = Color(0xffffffff);
 const clay = Color(0xffa499b3);
 
 
-const hostName = "http://143.42.21.193:4040/api/";
-const hostNameMedia = "http://143.42.21.193:4040";
+const hostName = "https://api.bookelu.zuludesks.com/api/";
+const hostNameMedia = "https://api.bookelu.zuludesks.com";
+
+//const hostNameIP = "http://143.42.21.193:4040/api/";
+//const hostNameMediaIP = "http://143.42.21.193:4040";
 
 //const hostName = "http://192.168.43.235:4040/api/";
 //const hostNameMedia = "http://192.168.43.235:4040";
