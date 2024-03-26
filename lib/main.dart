@@ -1,5 +1,8 @@
 import 'package:bookelu_app/Authentication/Registration/password.dart';
 import 'package:bookelu_app/HomeScreen/home_screen.dart';
+import 'package:bookelu_app/ShopView/Services/service_details.dart';
+import 'package:bookelu_app/ShopView/Services/service_details_appointment.dart';
+import 'package:bookelu_app/ShopView/Staff/staff_details.dart';
 import 'package:bookelu_app/SplashScreen/spalsh_screen.dart';
 import 'package:bookelu_app/theme.dart';
 import 'package:flutter/cupertino.dart';
@@ -64,7 +67,7 @@ class _MyHomePageState extends State<MyHomePage> {
         builder: (BuildContext context, AsyncSnapshot snapshot) {
 
           return api_key == null ? SplashScreen() : HomeScreen();
-          //return Password(data: {},);
+          //return ServiceDetails(service_id: 'SER-2342',service_name: "Welo Bello", service_rating: "4.8", shop_location: "Accra", open: true, service_price: "\$ 2,345", service_photo: "null",);
 
         });
   }

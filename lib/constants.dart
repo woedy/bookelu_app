@@ -20,8 +20,8 @@ const hostNameMedia = "https://api.bookelu.zuludesks.com";
 //const hostNameIP = "http://143.42.21.193:4040/api/";
 //const hostNameMediaIP = "http://143.42.21.193:4040";
 
-//const hostName = "http://192.168.43.235:4040/api/";
-//const hostNameMedia = "http://192.168.43.235:4040";
+//const hostName = "http://192.168.43.223:8000/api/";
+//const hostNameMedia = "http://192.168.43.223:8000";
 
 
 //const hostName = "http://192.168.43.223:8000/api/";

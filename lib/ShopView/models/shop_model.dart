@@ -191,16 +191,19 @@ class Data {
 }
 
 class ShopServices {
+  String? serviceId;
   String? serviceType;
 
-  ShopServices({this.serviceType});
+  ShopServices({this.serviceId, this.serviceType});
 
   ShopServices.fromJson(Map<String, dynamic> json) {
+    serviceId = json['service_id'];
     serviceType = json['service_type'];
   }
 
   Map<String, dynamic> toJson() {
     final Map<String, dynamic> data = new Map<String, dynamic>();
+    data['service_id'] = this.serviceId;
     data['service_type'] = this.serviceType;
     return data;
   }
@@ -223,14 +226,17 @@ class ShopInterior {
 }
 
 class ShopStaffs {
+  String? staffId;
   String? staffName;
   String? photo;
   String? role;
   int? rating;
 
-  ShopStaffs({this.staffName, this.photo, this.role, this.rating});
+  ShopStaffs(
+      {this.staffId, this.staffName, this.photo, this.role, this.rating});
 
   ShopStaffs.fromJson(Map<String, dynamic> json) {
+    staffId = json['staff_id'];
     staffName = json['staff_name'];
     photo = json['photo'];
     role = json['role'];
@@ -239,6 +245,7 @@ class ShopStaffs {
 
   Map<String, dynamic> toJson() {
     final Map<String, dynamic> data = new Map<String, dynamic>();
+    data['staff_id'] = this.staffId;
     data['staff_name'] = this.staffName;
     data['photo'] = this.photo;
     data['role'] = this.role;
@@ -250,24 +257,24 @@ class ShopStaffs {
 class ShopPackages {
   String? packageName;
   String? price;
-  String? photo;
   int? rating;
+  String? photo;
 
-  ShopPackages({this.packageName, this.price, this.photo, this.rating});
+  ShopPackages({this.packageName, this.price, this.rating, this.photo});
 
   ShopPackages.fromJson(Map<String, dynamic> json) {
     packageName = json['package_name'];
     price = json['price'];
-    photo = json['photo'];
     rating = json['rating'];
+    photo = json['photo'];
   }
 
   Map<String, dynamic> toJson() {
     final Map<String, dynamic> data = new Map<String, dynamic>();
     data['package_name'] = this.packageName;
     data['price'] = this.price;
-    data['photo'] = this.photo;
     data['rating'] = this.rating;
+    data['photo'] = this.photo;
     return data;
   }
 }

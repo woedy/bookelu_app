@@ -37,7 +37,9 @@ Future<SignInModel> signInUser(String email, String password) async {
     final result = json.decode(response.body);
     if (result != null) {
       print(result['data']['token'].toString());
+
       await saveIDApiKey(result['data']['token'].toString());
+      await saveUserID(result['data']['user_id'].toString());
 
 
       await saveUserData(result['data']);
@@ -65,6 +67,12 @@ Future<SignInModel> signInUser(String email, String password) async {
 Future<bool> saveIDApiKey(String apiKey) async {
   SharedPreferences prefs = await SharedPreferences.getInstance();
   prefs.setString("API_Key", apiKey);
+  return prefs.commit();
+}
+
+Future<bool> saveUserID(String apiKey) async {
+  SharedPreferences prefs = await SharedPreferences.getInstance();
+  prefs.setString("USER_ID", apiKey);
   return prefs.commit();
 }
 

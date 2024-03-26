@@ -267,10 +267,10 @@ class _ShopViewScreen1State extends State<ShopViewScreen1> {
                                                 });
                                               },
                                               children: [
-                                                _services_page(_shopDetail.shopServices!, _packages, _shopDetail.open, _shopDetail.locationName),
+                                                _services_page(_shopDetail.shopServices!, _packages, _shopDetail.open, _shopDetail.locationName, _shopDetail.shopStaffs, _shopDetail.shopId),
                                                 _gallery_page(_gallery),
                                                 _staff_page(_shopDetail.shopStaffs!),
-                                                _package_page(_packages, _shopDetail.open, _shopDetail.locationName!)
+                                                _package_page(_packages, _shopDetail.open, _shopDetail.locationName!, _shopDetail.shopStaffs, _shopDetail.shopId)
 
                                                 // Add more pages as needed
                                               ],
@@ -388,7 +388,7 @@ class _ShopViewScreen1State extends State<ShopViewScreen1> {
     super.dispose();
   }
 
-  Widget _services_page(service, parkages, bool? open, shop_location){
+  Widget _services_page(service, parkages, bool? open, shop_location, shop_staffs, shop_id){
     return Column(
       children: [
         Container(
@@ -560,12 +560,15 @@ class _ShopViewScreen1State extends State<ShopViewScreen1> {
 
 
                   Navigator.of(context).push(MaterialPageRoute(builder: (BuildContext context) => ServiceDetails(
+                    shop_id: shop_id,
                     service_name: parkages[index].packageName,
                     service_rating: parkages[index].rating,
                     shop_location: shop_location,
                     open: open,
+                    service_id: service[index].serviceId,
                     service_price: parkages[index].price,
                     service_photo: parkages[index].photo,
+                    staffs: shop_staffs,
                   )));
                 },
                 child: Column(
@@ -822,7 +825,7 @@ class _ShopViewScreen1State extends State<ShopViewScreen1> {
   }
 
 
-  Widget _package_page(data, bool? open, shop_location){
+  Widget _package_page(data, bool? open, shop_location, staffs, shop_id){
     return Column(
       children: [
 
@@ -837,9 +840,12 @@ class _ShopViewScreen1State extends State<ShopViewScreen1> {
                     service_name: data[index].packageName,
                     service_rating: data[index].rating,
                     shop_location: shop_location,
+                    shop_id: shop_id,
                     open: open,
+                    service_id: data[index].serviceId,
                     service_price: data[index].price,
                     service_photo: data[index].photo,
+                    staffs: staffs,
 
 
                   )));
